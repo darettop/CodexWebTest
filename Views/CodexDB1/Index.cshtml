@@ -4,6 +4,8 @@
     Layout = null;
 }
 
+@Styles.Render("~/Content/css")
+@Scripts.Render("~/bundles/modernizr")
 <!DOCTYPE html>
 
 <html>
@@ -12,10 +14,10 @@
     <title>Table</title>
 </head>
 <body>
-   
+
     <table class="table" style="border: 1px solid black">
-        <tr >
-            <th >
+        <tr>
+            <th>
                 @Html.DisplayNameFor(model => model.name)
             </th>
             <th>
@@ -26,22 +28,23 @@
             </th>
             <th></th>
         </tr>
-    
-    @foreach (var item in Model) {
-        <tr >
-            <td >
-                @Html.DisplayFor(modelItem => item.name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.amount)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.date)
-            </td>
-          
-        </tr>
-    }
-    
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.amount)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.date)
+                </td>
+
+            </tr>
+        }
+
     </table>
 </body>
 </html>
